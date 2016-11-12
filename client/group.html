@@ -1,0 +1,151 @@
+<template name="groups">
+	<h3>Команды</h3>
+	<table class="table table-bordered table-striped table-hover">
+		<thead class="thead-inverse">
+			<tr>
+				<th>#</th>
+				<th>Название</th>
+				<th>Описание</th>
+				<th>Нужны</th>
+				<th width="200">Участники</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr data-href="/group/id/" rel="href">
+				<td scope="row">1</td>
+				<td>Dolphin BI</td>
+				<td>Анализ блокчейна</td>
+				<td>Frontend</td>
+				<td>
+					<div class="avatars">
+						<a href="/user/id/" class="avatar">О</a>
+						<a href="/user/id/" class="avatar">П</a>
+						<a href="/user/id/" class="avatar">И</a>
+						<a href="/user/id/" class="avatar">А</a>
+					</div>
+				</td>
+			</tr>
+			<tr data-href="/group/id/" rel="href">
+				<td scope="row">2</td>
+				<td>DAO platform</td>
+				<td>Создание и управление команд</td>
+				<td>Backend, Юрист, Маркетинг, Копирайтер, Ethereum</td>
+				<td>
+					<div class="avatars">
+						<a href="/user/id/" class="avatar">Е</a>
+					</div>
+				</td>
+			</tr>
+			<tr data-href="/group/id/" rel="href">
+				<td scope="row">3</td>
+				<td>Borderless Identity Management System</td>
+				<td>As a civilization evolves and becomes more interconnected, its dependency on borders diminish...</td>
+				<td>Ethereum</td>
+				<td>
+					<div class="avatars">
+						<a href="/user/id/" class="avatar">Е</a>
+					</div>
+				</td>
+			</tr>
+			<tr data-href="/group/id/" rel="href">
+				<td scope="row">4</td>
+				<td>Solidifier - Formal verification of Solidity programs</td>
+				<td>The bugs in the software we use in our everyday life have the potential of
+causing a lot of harm to us all. For instance, the recent hack in The DAO
+shows that any program that has not been formally verified is potentially
+unsafe...</td>
+				<td>Ethereum</td>
+				<td>
+					<div class="avatars">
+						<a href="/user/id/" class="avatar">Е</a>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</template>
+
+<template name="group">
+	<div class="heading">
+		<h3>Borderless Identity Management System</h3>
+		<h3><a href="/group/id/tasks" class="btn btn-primary">Задачи</a>  5 <a href="#" class="fa fa-thumbs-o-up"></a> <a href="#" class="fa fa-thumbs-o-down"></a>  <a href="#" class="fa fa-share-alt"></a></h3>
+	</div>
+	<div class="description">
+		<p>As a civilization evolves and becomes more interconnected, its dependency on borders diminish. Picture a world where you and your children live, unrestricted. Free to focus on the things that matter the most because all of your basic needs are met implicitly, and
+	everything else is voted on by a direct democracy influenced directly by your actions.</p>
+		<p>The future you just envisioned is one we can make together with borderless technology.</p>
+		<p>Borderless.tech is a coalition of globally accessible identity management services forged out of smart contracts that live on the Expanse/Ethereum blockchains.</p>
+		<p>Together we can let go of those imaginary lines, become a global citizen and reach our true potential as masters of the earth. We will reunite a planet that's been separated for far too long.</p>
+		<ul>
+			<li><a href="https://www.youtube.com/watch?v=YFzA7w7FScc">https://www.youtube.com/watch?v=YFzA7w7FScc</a></li>
+			<li><a href="#">http://www.borderless.tech</a></li>
+		</ul>
+	</div>
+	<h4>Участники</h4>
+	<table class="table table-bordered table-striped table-hover">
+		<thead class="thead-inverse">
+			<tr>
+				<th>#</th>
+				<th>Name</th>
+				<th>Навыки</th>
+				<th>Голос</th>
+				<th>Дивиденды</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr rel="href" data-href="/user/id/">
+				<th scope="row">1</th>
+				<td>Марк</td>
+				<td>SMM, Маркетинг</td>
+				<td>1000</td>
+				<td>2000</td>
+			</tr>
+			<tr rel="href" data-href="/user/id/">
+				<th scope="row">2</th>
+				<td>Паша</td>
+				<td>SMM</td>
+				<td>2000</td>
+				<td>500</td>
+			</tr>
+			<tr rel="href" data-href="/user/id/">
+				<th scope="row">3</th>
+				<td>Виталик</td>
+				<td>Ethereum, Waves</td>
+				<td>3000</td>
+				<td>1000</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4>Статистика</h4>
+	<div class="statistics">
+		<img src="/img/group-stat.png">
+		<img src="/img/group-stat-2.png">
+	</div>
+</template>
+
+<template name="groupAdd">
+	<h3>Новая команда</h3>
+	<form>
+		<div class="form-group">
+			<label for="name">Название команды</label>
+			<input type="text" class="form-control" id="name">
+		</div>
+		<div class="form-group">
+			<label for="cryptoassetname">Название криптоакции</label>
+			<input type="text" class="form-control" id="cryptoassetname">
+		</div>
+		<div class="form-group">
+			<label for="cryptoratingname">Название криптовалюты рейтинга</label>
+			<input type="text" class="form-control" id="cryptoratingname">
+		</div>
+		<div class="form-group">
+			<label for="cryptoratingname">Родители</label>
+			<input type="text" class="form-control" id="cryptoratingname">
+		</div>
+		<div class="form-group">
+			<label for="cryptoratingname">Дети</label>
+			<input type="text" class="form-control" id="cryptoratingname">
+		</div>
+		<button type="submit" class="btn btn-primary">Submit</button>
+	</form>
+</template>

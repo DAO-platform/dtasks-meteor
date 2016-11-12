@@ -1,0 +1,48 @@
+<head>
+	<title>DAO platform</title>
+</head>
+
+<template name="layout">
+	<body>
+		<div class="container">
+			<br>
+			<nav class="navbar navbar-light bg-faded">
+				<button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#navbar-header" aria-controls="navbar-header" aria-expanded="false" aria-label="Toggle navigation"></button>
+				<div class="collapse navbar-toggleable-xs" id="navbar-header">
+					<ul class="nav navbar-nav">
+						<li><a href="/">DAO platform</a> — децентрализируй команду</li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right float-md-right pull-right">
+						{{> loginButtons}}
+					</ul>
+				</div>
+			</nav>
+			<br>
+			{{> yield }}
+		</div>
+	</body>
+</template>
+
+<template name="list">
+	<ul>
+		<li><a href="/groups/">Список групп: компаний/команд/проектов</a></li>
+		<li><a href="/group/add/">Добавление группы: команды/компании/проекта</a></li>
+		<li><a href="/group/id/">Редактирование/просмотр группы</a></li>
+		<li><a href="/group/id/tasks/">Список задач группы</a></li>
+		<li><a href="/group/id/task/add/">Добавление задачи</a></li>
+		<li><a href="/group/id/task/id/">Редактирование/просмотр задачи</a></li>
+		<li><a href="/users/">Список пользователей</a></li>
+		<li><a href="/user/id/">Редактирование/просмотр пользователя</a></li>
+	</ul>
+</template>
+
+<template name="landing">
+	<p class="text-center">
+		<a href="/groups/" class="btn btn-lg btn-primary">Список команд</a>
+	</p>
+	<iframe width="100%" src="https://www.youtube.com/embed/fxTHlHMN6uA" frameborder="0" allowfullscreen></iframe>
+</template>
+
+<template name="admin">
+	admin
+</template>
