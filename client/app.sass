@@ -12,6 +12,12 @@
 .statistics
 	display: flex
 	justify-content: space-between
+	.item
+		flex: 0 1 auto
+		flex: 0 1 50%
+		max-width: 50%
+		img
+			max-width: 100%
 
 // heading
 .heading
@@ -27,6 +33,8 @@
 .avatars
 	display: flex
 	flex-wrap: wrap
+	&+.avatars
+	margin-top: 5px
 .avatar
 	width: 40px
 	height: 40px

@@ -1,6 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
+// import '../imports/startup/accounts-config.js';
 import 'meteor/jquery';
 // import '../imports/vendor/d3pie.js';
 import { Tasks } from '../imports/api/tasks.js';
@@ -209,6 +210,52 @@ Template.tasks.onRendered(function () {
 		location.href = $(this).data('href');
 	});
 });
+Template.tasks.helpers({
+	tasks() {
+		// Show newest tasks at the top
+		return Tasks.find({
+			owner: this.userId,
+		});
+	},
+	// settings: function () {
+	// 	return {
+	// 		collection: Tasks,
+	// 		rowsPerPage: 10,
+	// 		showFilter: true,
+	// 		fields: ['text']
+	// 	};
+	// }
+});
+
+Template.tasks.events({
+	'submit .addТask'(event) {
+		// Prevent default browser form submit
+		event.preventDefault();
+
+		// Get value from form element
+		const target = event.target;
+		const text = target.text.value;
+		// check(text, String);
+
+		// Insert a task into the collection
+		// Tasks.insert({
+		// 	text,
+		// 	createdAt: new Date(),
+		// 	owner: Meteor.userId(),
+		// 	email: Meteor.users.findOne(this.userId).emails[0],
+		// 	// owner: Meteor.user()._id,
+		// 	// email: Meteor.user().emails[0],
+		// });
+		Meteor.call('tasks.insert', text);
+		// Clear form
+		target.text.value = '';
+	},
+	'click .remove'() {
+		// Tasks.remove(this._id);
+		console.log('remove');
+		Meteor.call('tasks.remove', this._id);
+	},
+});
 
 Router.route('/group/id/task/add', function () {
 	this.render('taskAdd').layout('layout');
@@ -224,42 +271,3 @@ Router.route('/users/', function () {
 Router.route('/user/id/', function () {
 	this.render('user').layout('layout');
 });
-
-// Template.taskList.helpers({
-// 	tasks() {
-// 		// Show newest tasks at the top
-// 		return Tasks.find({
-// 			owner: this.userId,
-// 		});
-// 	},
-// 	// settings: function () {
-// 	// 	return {
-// 	// 		collection: Tasks,
-// 	// 		rowsPerPage: 10,
-// 	// 		showFilter: true,
-// 	// 		fields: ['text']
-// 	// 	};
-// 	// }
-// });
-
-// Template.taskList.events({
-// 	'submit .new-task'(event) {
-// 		// Prevent default browser form submit
-// 		event.preventDefault();
-// 		// Get value from form element
-// 		const target = event.target;
-// 		const text = target.text.value;
-// 		// Insert a task into the collection
-// 		Tasks.insert({
-// 			text,
-// 			createdAt: new Date(),
-// 			owner: Meteor.user()._id,
-// 			email: Meteor.user().emails[0],
-// 		});
-// 		// Clear form
-// 		target.text.value = '';
-// 	},
-// 	'click .delete'() {
-// 		Tasks.remove(this._id);
-// 	},
-// });
